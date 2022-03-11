@@ -1,0 +1,79 @@
+{ pkgs, ... }:
+
+{
+  home.packages = with pkgs; [
+    faba-icon-theme
+    gnome-icon-theme
+    lm_sensors
+
+    # Fonts:
+    meslo-lgs-nf
+    font-awesome
+
+    betterlockscreen
+    discord
+    feh
+    gnupg
+    pinentry # dependency of gnupg
+    pavucontrol
+    spotify
+    slack
+    teams
+    thunderbird
+    vlc
+    mpv
+    qbittorrent
+
+    virtualbox
+
+    man-pages
+    man-db
+
+    # System
+    autorandr # TODO config
+    xautolock
+    xss-lock
+    wireguard-tools
+
+    # Dev tools
+    docker
+    docker-compose
+    flex
+    gdb
+    pre-commit
+    autoconf
+    libtool
+    tig
+    valgrind
+    gnumake
+
+    # DoomEmacs dependencies
+    # nixfmt
+    nixpkgs-fmt
+    ripgrep
+
+    # Shell utilities
+    bottom
+    direnv
+    exa
+    escrotum
+    fzf
+    zoxide
+    neofetch
+    neovim
+    unzip
+    xclip
+    nix-zsh-completions
+    clang-tools
+
+    # Formatters and language servers
+    nixpkgs-fmt
+    rust-analyzer
+    rustfmt
+    stylua
+    sumneko-lua-language-server
+    texlab
+  ];
+
+ fonts.fontconfig.enable = true;
+}
