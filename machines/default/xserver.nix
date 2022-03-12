@@ -6,7 +6,10 @@
     layout = "us";
     xkbOptions = "caps:escape";
 
-    libinput.enable = true;
+    libinput = {
+      enable = true;
+      touchpad.naturalScrolling = true;
+    };
     desktopManager.xterm.enable = false;
     displayManager.defaultSession = "none+i3";
     windowManager.i3 = {
