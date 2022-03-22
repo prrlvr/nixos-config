@@ -8,8 +8,12 @@ let
     };
     init.defaultBranch = "main";
     pull.rebase = true;
-    signing.signByDefault = true;
     color.ui = true;
+
+    signing = {
+      signByDefault = true;
+      key = "0x37B8BBB552DB2B55";
+    };
     commit = {
       gpgsing = true;
       verbose = true;
