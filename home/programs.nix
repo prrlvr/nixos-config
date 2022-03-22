@@ -24,8 +24,6 @@
     mpv
     qbittorrent
 
-    virtualbox
-
     man-pages
     man-db
 
@@ -60,11 +58,12 @@
     fzf
     zoxide
     neofetch
-    neovim
     unzip
     xclip
     nix-zsh-completions
     clang-tools
+
+    neovim
 
     # Formatters and language servers
     nixpkgs-fmt
@@ -75,5 +74,5 @@
     texlab
   ];
 
- fonts.fontconfig.enable = true;
+  fonts.fontconfig.enable = true;
 }
