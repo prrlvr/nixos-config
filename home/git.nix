@@ -9,9 +9,14 @@ let
     init.defaultBranch = "main";
     pull.rebase = true;
     signing.signByDefault = true;
-    commit.gpgsign = true;
+    color.ui = true;
+    commit = {
+      gpgsing = true;
+      verbose = true;
+    };
   };
-in {
+in
+{
   programs.git = {
     enable = true;
     userName = "Pierre-Olivier Rey";
@@ -21,7 +26,8 @@ in {
     aliases = {
       amend = "commit --amend";
       st = "status";
-      ls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
+      lg = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
+      lo = "log --graph --decorate --oneline";
     };
   };
 }
