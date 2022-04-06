@@ -38,8 +38,8 @@ in
       "ZSH_DISABLE_COMPFIX" = "true";
       "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE" = "fg=10";
       "ALTERNATE_EDITOR" = "";
-      "VISUAL" = "vim";
-      "EDITOR" = "vim";
+      "VISUAL" = "nvim";
+      "EDITOR" = "nvim";
       "MAKEFLAGS" = "-j4";
       "_ZO_ECHO" = "1"; # 'When set to 1, z will print the matched directory before navigating to it.
       "_ZO_RESOLVE_SYMLINKS" = "1"; # When set to 1, z will resolve symlinks before adding directories to the database.
@@ -51,10 +51,10 @@ in
       la = "exa -lah";
       l = "exa -lh";
       tree = "exa --tree";
-      e = "emacsclient -cnqu";
 
       dtc = "docker run --rm -ti --user 1000 --workdir /tc -v ~/tiger/tc:/tc registry.lrde.epita.fr/tiger-sid";
       nix-regenv =''echo "use nix" > .envrc; direnv allow'';
+      vim = "nvim";
     };
 
     initExtra = ''

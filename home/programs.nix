@@ -10,6 +10,7 @@
     meslo-lgs-nf
     font-awesome
 
+    obs-studio
     betterlockscreen
     discord
     feh
@@ -44,6 +45,7 @@
     tig
     valgrind
     gnumake
+    bear
 
     # DoomEmacs dependencies
     # nixfmt
