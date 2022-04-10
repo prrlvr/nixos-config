@@ -55,8 +55,7 @@
   };
 
   outputs =
-    {
-      self
+    { self
     , flake-utils
     , nixpkgs
     , home-manager
@@ -66,32 +65,32 @@
     }@inputs:
     flake-utils.lib.eachDefaultSystem
       (system:
-        let
-          inherit (inputs.flake-utils.lib) flattenTree;
-          pkgs = nixpkgs.legacyPackages.${system};
-        in
-          {
-            checks = {
-              pre-commit = pre-commit-hooks.lib.${system}.run {
-                src = ./.;
-                hooks.nixpkgs-fmt.enable = true;
-              };
-            };
+      let
+        inherit (inputs.flake-utils.lib) flattenTree;
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+      {
+        checks = {
+          pre-commit = pre-commit-hooks.lib.${system}.run {
+            src = ./.;
+            hooks.nixpkgs-fmt.enable = true;
+          };
+        };
 
-            devShell = pkgs.mkShell {
-              name = "NixOS-config-devShell";
-              nativeBuildInputs = with pkgs; [
-                nix-prefetch-github
-                nixpkgs-fmt
-              ];
-            };
+        devShell = pkgs.mkShell {
+          name = "NixOS-config-devShell";
+          nativeBuildInputs = with pkgs; [
+            nix-prefetch-github
+            nixpkgs-fmt
+          ];
+        };
 
-            # packages = flattenTree
-            #   (import ./pkgs {
-            #     pkgs = import nixpkgs { inherit system; };
-            #   });
-            packages = pkgs;
-          }
+        # packages = flattenTree
+        #   (import ./pkgs {
+        #     pkgs = import nixpkgs { inherit system; };
+        #   });
+        packages = pkgs;
+      }
       )
     //
     {
@@ -104,15 +103,15 @@
             users = {
               prrlvr = import ./home;
               # {
-                # imports = [ nix-doom-emacs.hmModule ./home ];
-                # programs.doom-emacs = {
-                #   enable = true;
-                #   doomPrivateDir = ./.doom.d;
-                #   emacsPackagesOverlay = self: super: {
-                #     # fixes https://github.com/vlaci/nix-doom-emacs/issues/394
-                #     gitignore-mode = nixpkgs.emacsPackages.git-modes;
-                #     gitconfig-mode = nixpkgs.emacsPackages.git-modes;
-                #   };
+              # imports = [ nix-doom-emacs.hmModule ./home ];
+              # programs.doom-emacs = {
+              #   enable = true;
+              #   doomPrivateDir = ./.doom.d;
+              #   emacsPackagesOverlay = self: super: {
+              #     # fixes https://github.com/vlaci/nix-doom-emacs/issues/394
+              #     gitignore-mode = nixpkgs.emacsPackages.git-modes;
+              #     gitconfig-mode = nixpkgs.emacsPackages.git-modes;
+              #   };
               # };
             };
           };
@@ -132,33 +131,33 @@
             # { nixpkgs.overlays = custom_overlays; }
           ] ++ (nixpkgs.lib.attrValues self.nixosModules);
         in
-          {
-            ayanami = nixpkgs.lib.nixosSystem {
-              inherit system;
-              modules = [
-                {
-                  imports = [
-                    ./machines/ayanami.nix
+        {
+          ayanami = nixpkgs.lib.nixosSystem {
+            inherit system;
+            modules = [
+              {
+                imports = [
+                  ./machines/ayanami.nix
 
-                    inputs.nixos-hardware.nixosModules.common-cpu-intel
-                    inputs.nixos-hardware.nixosModules.common-pc-laptop
-                  ] ++ custom_modules;
-                }
-              ];
-            };
-            shinji = nixpkgs.lib.nixosSystem {
-              inherit system;
-              modules = [
-                {
-                  imports = [
-                    ./machines/shinji.nix
-
-                    inputs.nixos-hardware.nixosModules.common-cpu-intel
-                  ] ++ custom_modules;
-                }
-              ];
-            };
-
+                  inputs.nixos-hardware.nixosModules.common-cpu-intel
+                  inputs.nixos-hardware.nixosModules.common-pc-laptop
+                ] ++ custom_modules;
+              }
+            ];
           };
+          shinji = nixpkgs.lib.nixosSystem {
+            inherit system;
+            modules = [
+              {
+                imports = [
+                  ./machines/shinji.nix
+
+                  inputs.nixos-hardware.nixosModules.common-cpu-intel
+                ] ++ custom_modules;
+              }
+            ];
+          };
+
+        };
     };
 }

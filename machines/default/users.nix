@@ -12,5 +12,7 @@
       "video"
       "wheel"
     ];
+
+    group = "prrlvr";
   };
 }

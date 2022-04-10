@@ -14,12 +14,12 @@
     ranger
     networkmanagerapplet
     vim
-    emacs
     wget
     pavucontrol
     gcc
     gcc.man
     clang_12
+    tmux
   ];
 
   programs = {
@@ -35,12 +35,7 @@
       enable = true;
       enableOnBoot = true;
     };
-    virtualbox.host = {
-      enable = true;
-      # enableExtensionPack = true;
-    };
   };
-  users.extraGroups.vboxusers.members = [ "prrlvr" ];
 
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "Mononoki" "FiraCode" "Iosevka" ]; })
