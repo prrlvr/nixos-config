@@ -10,7 +10,7 @@
     ./default/crypt-system.nix
     ./default/locales.nix
     ./default/nix.nix
-    ./default/users.nix
+    # ./default/users.nix
     ./default/programs.nix
     ./default/xserver.nix
   ];
