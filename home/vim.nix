@@ -28,7 +28,7 @@ in
   programs.vim = {
     enable = true;
     packageConfigurable = pkgs.vim_configurable.override {
-      python = pkgs.python36Full;
+      #      python = pkgs.python36Full;
       perl = pkgs.perl;
     };
     plugins = with pkgs.vimPlugins // customPlugins; [

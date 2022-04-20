@@ -1,34 +1,29 @@
-{ pkgs, config, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  networking = {
-    hostName = "ayanami";
-    useDHCP = false;
-    interfaces.wlp4s0.useDHCP = true;
+
+  nixpkgs.config.allowUnfree = true;
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+
+    trustedUsers = [ "@wheel" ];
+    autoOptimiseStore = true;
   };
-
-  time.timeZone = "Europe/Paris";
-
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-
-  # services.openssh = {
-  #   enable = true;
-  #   permitRootLogin = "no";
-  # };
-
-  console.keyMap = "us";
 
   # nix cache server
   services.nix-serve = {
     enable = true;
     secretKeyFile = "/var/cache-priv.key.pem";
+    port = 8090;
   };
 
   services.nginx = {
     enable = true;
     virtualHosts = {
-      "test.10.29.125.103" = {
+      "nix-cache.prrlvr.fr" = {
         serverAliases = [ "binarycache" ];
         locations."/".extraConfig = ''
           proxy_pass http://localhost:${toString config.services.nix-serve.port};

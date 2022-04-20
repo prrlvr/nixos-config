@@ -8,11 +8,26 @@
     '';
 
     matchBlocks = {
-      cri-playground = {
+      shinji-0 = {
         user = "root";
-        hostname = "192.168.100.43";
-        proxyJump = "root@91.243.117.152";
+        hostname = "10.29.105.41";
+      };
+
+      shinji-1 = {
+        user = "root";
+        hostname = "10.29.114.183";
+      };
+
+      shinji-2 = {
+        user = "root";
+        hostname = "10.29.118.213";
+      };
+
+      shinji-3 = {
+        user = "root";
+        hostname = "10.29.104.245";
       };
     };
+
   };
 }

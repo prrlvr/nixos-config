@@ -3,13 +3,13 @@
 {
   imports = [
     # Machine own config
-    ./shinji
-    ./shinji/hardware.nix
+    ./ritsuko
+    ./ritsuko/nix.nix
+    ./ritsuko/hardware.nix
+    ./ritsuko/crypt-system.nix
 
     # Inherit default config
-    ./default/crypt-system.nix
     ./default/locales.nix
-    ./default/nix.nix
     ./default/programs.nix
     ./default/xserver.nix
   ];

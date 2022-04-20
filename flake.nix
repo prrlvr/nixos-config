@@ -145,6 +145,7 @@
               }
             ];
           };
+
           shinji = nixpkgs.lib.nixosSystem {
             inherit system;
             modules = [
@@ -153,11 +154,21 @@
                   ./machines/shinji.nix
 
                   inputs.nixos-hardware.nixosModules.common-cpu-intel
-                ] ++ custom_modules;
+                ];
               }
             ];
           };
 
+          ritsuko = nixpkgs.lib.nixosSystem {
+            inherit system;
+            modules = [
+              {
+                imports = [
+                  ./machines/ritsuko.nix
+                ];
+              }
+            ];
+          };
         };
     };
 }
