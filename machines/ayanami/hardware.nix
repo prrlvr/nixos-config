@@ -1,13 +1,15 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-    imports = [
+  imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
   # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   boot = {
     initrd = {

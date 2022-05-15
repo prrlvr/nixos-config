@@ -9,7 +9,7 @@
       experimental-features = nix-command flakes
     '';
 
-    trustedUsers = [ "@wheel" ];
+    trustedUsers = [ "@wheel" "@prrlvr" ];
     autoOptimiseStore = true;
     # gc = {
     #   automatic = true;

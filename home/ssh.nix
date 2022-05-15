@@ -8,26 +8,12 @@
     '';
 
     matchBlocks = {
-      shinji-0 = {
+      nix-cache = {
         user = "root";
-        hostname = "10.29.105.41";
-      };
-
-      shinji-1 = {
-        user = "root";
-        hostname = "10.29.114.183";
-      };
-
-      shinji-2 = {
-        user = "root";
-        hostname = "10.29.118.213";
-      };
-
-      shinji-3 = {
-        user = "root";
-        hostname = "10.29.104.245";
+        hostname = "192.168.1.47";
+        identitiesOnly = true;
+        identityFile = "/home/prrlvr/.ssh/id_rsa";
       };
     };
-
   };
 }

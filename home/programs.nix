@@ -54,6 +54,7 @@
 
     # Shell utilities
     bottom
+    zathura
     direnv
     exa
     escrotum
@@ -66,6 +67,8 @@
     clang-tools
 
     neovim
+
+    flameshot
 
     # Formatters and language servers
     nixpkgs-fmt
