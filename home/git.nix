@@ -33,10 +33,12 @@ in
     };
 
     aliases = {
-      amend = "commit --amend";
-      st = "status";
+      a = "commit --amend";
+      s = "status -s";
       lg = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
       ci-skip = "push -o ci.skip";
+      pf = "push --force-with-lease";
+      pff = "push --force";
     };
   };
 }
