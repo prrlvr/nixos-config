@@ -23,7 +23,7 @@
 
   programs = {
     gnupg.agent.enable = true;
-    ssh.startAgent = true;
+    # ssh.startAgent = true;
     light.enable = true;
     nm-applet.enable = true;
   };

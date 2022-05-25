@@ -20,6 +20,7 @@
 
   nix = {
     binaryCaches = [
+      "https://nix-cache.prrlvr.fr"
       "https://s3.cri.epita.fr/cri-nix-cache.s3.cri.epita.fr"
       "https://nix-community.cachix.org"
       "https://cache.nixos.org/"

@@ -2,18 +2,16 @@
 
 let
   config = {
-    core = {
-      editor = "vim";
-      pager = "less --tabs=4 -RFX";
-    };
+    core = { editor = "vim"; };
     init.defaultBranch = "main";
     pull.rebase = true;
     color.ui = true;
 
     signing = {
       signByDefault = true;
-      key = "0x37B8BBB552DB2B55";
+      key = "0x4D3849D995551307";
     };
+
     commit = {
       gpgsing = true;
       verbose = true;
@@ -27,11 +25,18 @@ in
     userEmail = "pierre-olivier.rey@epita.fr";
     extraConfig = config;
 
+    delta = {
+      enable = true;
+      options = {
+        syntax-theme = "Solarized (light)";
+      };
+    };
+
     aliases = {
       amend = "commit --amend";
       st = "status";
       lg = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
-      lo = "log --graph --decorate --oneline";
+      ci-skip = "push -o ci.skip";
     };
   };
 }

@@ -12,8 +12,6 @@
     fsType = "vfat";
   };
 
-  swapDevices = [{ device = "/dev/disk/by-label/swap"; }];
-
   boot.initrd.luks.devices.cryptroot = {
     device = "/dev/disk/by-label/cryptroot";
     preLVM = true;

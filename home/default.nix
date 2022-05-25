@@ -31,4 +31,5 @@
     MANPAGER = "less --mouse";
     PAGER = "less --mouse";
   };
+
 }

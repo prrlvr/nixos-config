@@ -1,14 +1,14 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs.gpg = {
-    enable = true;
-  };
-
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
-    pinentryFlavor = "qt";
+    pinentryFlavor = "curses";
     defaultCacheTtl = 3600;
+  };
+
+  programs = {
+    gpg = { enable = true; };
   };
 }

@@ -32,5 +32,11 @@
     };
   };
 
+  security.pam.yubico = {
+    enable = true;
+    mode = "challenge-response";
+    # control = "required";
+  };
+
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }

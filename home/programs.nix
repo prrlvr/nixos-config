@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
+  teamviewer
+
     faba-icon-theme
     gnome-icon-theme
     lm_sensors
@@ -14,8 +16,6 @@
     betterlockscreen
     discord
     feh
-    gnupg
-    pinentry # dependency of gnupg
     pavucontrol
     spotify
     slack
@@ -35,7 +35,6 @@
     wireguard-tools
 
     # Dev tools
-    docker
     docker-compose
     flex
     gdb
@@ -47,8 +46,6 @@
     gnumake
     bear
 
-    # DoomEmacs dependencies
-    # nixfmt
     nixpkgs-fmt
     ripgrep
 
@@ -65,13 +62,13 @@
     xclip
     nix-zsh-completions
     clang-tools
+    jq
 
     neovim
 
     flameshot
 
     # Formatters and language servers
-    nixpkgs-fmt
     rust-analyzer
     rustfmt
     stylua
