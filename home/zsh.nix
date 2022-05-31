@@ -55,6 +55,8 @@ in
       dtc = "docker run --rm -ti --user 1000 --workdir /tc -v ~/tiger/tc:/tc registry.lrde.epita.fr/tiger-sid";
       nix-regenv =''echo "use nix" > .envrc; direnv allow'';
       vim = "nvim";
+
+      cwk = "nix run -L .#check-workflow $(basename $PWD)";
     };
 
     initExtra = ''

@@ -45,6 +45,7 @@
     valgrind
     gnumake
     bear
+    stack
 
     nixpkgs-fmt
     ripgrep
@@ -74,6 +75,7 @@
     stylua
     sumneko-lua-language-server
     texlab
+    haskell-language-server
   ];
 
   fonts.fontconfig.enable = true;

@@ -13,7 +13,7 @@ let
     };
 
     commit = {
-      gpgsing = true;
+      gpgsign = true;
       verbose = true;
     };
   };
@@ -34,6 +34,7 @@ in
 
     aliases = {
       a = "commit --amend";
+      c = "commit -S";
       s = "status -s";
       lg = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
       ci-skip = "push -o ci.skip";

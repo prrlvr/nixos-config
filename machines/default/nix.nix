@@ -24,6 +24,10 @@
       "https://s3.cri.epita.fr/cri-nix-cache.s3.cri.epita.fr"
       "https://nix-community.cachix.org"
       "https://cache.nixos.org/"
+      "https://cache.iog.io"
+    ];
+    binaryCachePublicKeys = [
+      "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
     ];
     requireSignedBinaryCaches = false;
   };

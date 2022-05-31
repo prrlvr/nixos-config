@@ -154,7 +154,7 @@
                   ./machines/shinji.nix
 
                   inputs.nixos-hardware.nixosModules.common-cpu-intel
-                ];
+                ] ++ custom_modules;
               }
             ];
           };
