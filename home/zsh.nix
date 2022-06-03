@@ -36,7 +36,7 @@ in
 
     sessionVariables = {
       "ZSH_DISABLE_COMPFIX" = "true";
-      "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE" = "fg=10";
+      "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE" = "fg=6";
       "ALTERNATE_EDITOR" = "";
       "VISUAL" = "nvim";
       "EDITOR" = "nvim";
@@ -62,6 +62,7 @@ in
     initExtra = ''
       eval "$(direnv hook zsh)"
       eval "$(zoxide init --hook pwd zsh)"
+      prompt_nix_shell_setup
     '';
 
     oh-my-zsh = {
