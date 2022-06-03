@@ -4,6 +4,7 @@
   imports = [
     # ./dunst.nix
     ./alacritty.nix
+    ./dunst.nix
     ./git.nix
     ./gnupg.nix
     ./gtk.nix
@@ -14,6 +15,7 @@
     ./rofi.nix
     ./ssh.nix
     ./vim.nix
+    ./rofi.nix
     # ./neovim.nix
     ./xdg.nix
     ./xresources.nix
