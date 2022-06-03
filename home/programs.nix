@@ -76,6 +76,7 @@
     sumneko-lua-language-server
     texlab
     haskell-language-server
+    nodePackages.pyright
   ];
 
   fonts.fontconfig.enable = true;
