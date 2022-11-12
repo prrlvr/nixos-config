@@ -6,6 +6,7 @@
     ./asuka
     ./asuka/hardware.nix
     ./asuka/home.nix
+    ./asuka/xserver.nix
 
     # Inherit default config
     ./default/crypt-system.nix
@@ -13,7 +14,6 @@
     ./default/nix.nix
     ./default/programs.nix
     ./default/users.nix
-    ./default/xserver.nix
   ];
 
   system.stateVersion = "22.05";
