@@ -102,28 +102,31 @@ in
           "${modifier}+Shift+e" = "exec \"i3-nagbar -t warning -m 'exit?' -B 'Yes' 'i3-msg exit'\"";
           "${modifier}+Shift+c" = "reload";
           "${modifier}+Shift+r" = "restart";
+          "${modifier}+Shift+space" = "floating toggle";
           "${modifier}+i" = ''exec --no-startup-id "pkill -u $USER -USR1 dunst; betterlockscreen --lock; pkill -u $USER -USR2 dunst"'';
+          "${modifier}+Shift+x" = ''exec --no-startup-id "sh -c source /home/prrlvr/.screeenlayout/reset.sh"'';
+          "${modifier}+Shift+z" = ''exec "sh -c source /home/prrlvr/.screeenlayout/lab.sh"'';
         }
         {
           "${modifier}+space" = "exec rofi -show run";
         }
         {
           "${modifier}+r" = "mode resize";
-          "${modifier}+Shift+x" = "exec ~/.screeenlayout/reset.sh";
         }
         {
           "${modifier}+e" = "exec emacsclient --create-frame";
           "${modifier}+b" = "exec firefox";
+          "${modifier}+g" = ''exec "firefox"'';
         }
         {
-          "XF86AudioRaiseVolume" = "exec ~/.scripts/system_status/volumeControl.sh up";
-          "XF86AudioLowerVolume" = "exec ~/.scripts/system_status/volumeControl.sh down";
-          "XF86AudioMute" = "exec ~/.scripts/system_status/volumeControl.sh mute";
-          "XF86AudioMicMute" = "exec ~/.scripts/system_status/micControl.sh mute";
+          "XF86AudioRaiseVolume" = "exec pactl set-sink-volume 0 +5%";
+          "XF86AudioLowerVolume" = "exec pactl set-sink-volume 0 -5%";
+          "XF86AudioMute" = "exec pactl set-sink-mute 0 toggle";
+          "XF86AudioMicMute" = "exec test";
         }
         {
-          "XF86MonBrightnessUp" = "exec ~/.scripts/system_status/brightnessControl.sh up";
-          "XF86MonBrightnessDown" = "exec ~/.scripts/system_status/brightnessControl.sh down";
+          "XF86MonBrightnessUp" = "exec light -A 10";
+          "XF86MonBrightnessDown" = "exec light -U 10";
         }
         (createWorkspaceBindings modifier "workspace")
         (createWorkspaceBindings "${modifier}+Shift" "move container to workspace number")
@@ -203,6 +206,7 @@ in
       exec_always --no-startup-id $HOME/.fehbg
       exec_always --no-startup-id xss-lock -- betterlockscreen --lock
       exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+      exec_always --no-startup-id flameshot & disown
 
       set $bg-color            #2f343f
       set $inactive-bg-color   #2f343f
