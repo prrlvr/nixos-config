@@ -35,6 +35,7 @@ in
     ];
 
     sessionVariables = {
+      "HISTSIZE" = 100000;
       "ZSH_DISABLE_COMPFIX" = "true";
       "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE" = "fg=6";
       "ALTERNATE_EDITOR" = "";
@@ -43,6 +44,8 @@ in
       "MAKEFLAGS" = "-j4";
       "_ZO_ECHO" = "1"; # 'When set to 1, z will print the matched directory before navigating to it.
       "_ZO_RESOLVE_SYMLINKS" = "1"; # When set to 1, z will resolve symlinks before adding directories to the database.
+
+      "NNTPSERVER" = "snews://news.epita.fr";
     };
 
     shellAliases = {
@@ -53,16 +56,19 @@ in
       tree = "exa --tree";
 
       dtc = "docker run --rm -ti --user 1000 --workdir /tc -v ~/tiger/tc:/tc registry.lrde.epita.fr/tiger-sid";
-      nix-regenv =''echo "use nix" > .envrc; direnv allow'';
+      nix-regenv = ''echo "use nix" > .envrc; direnv allow'';
       vim = "nvim";
 
       cwk = "nix run -L .#check-workflow $(basename $PWD)";
+
+      kns = "kubectl config set-context --current --namespace=";
     };
 
     initExtra = ''
       eval "$(direnv hook zsh)"
       eval "$(zoxide init --hook pwd zsh)"
       prompt_nix_shell_setup
+      any-nix-shell zsh --info-right | source /dev/stdin
     '';
 
     oh-my-zsh = {
