@@ -16,6 +16,7 @@
     ./ssh.nix
     ./vim.nix
     ./rofi.nix
+    ./slrn.nix
     # ./neovim.nix
     ./xdg.nix
     ./xresources.nix
