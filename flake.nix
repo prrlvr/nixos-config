@@ -146,6 +146,19 @@
             ];
           };
 
+          asuka = nixpkgs.lib.nixosSystem {
+            inherit system;
+            modules = [
+              {
+                imports = [
+                  ./machines/asuka.nix
+
+                  inputs.nixos-hardware.nixosModules.common-cpu-amd
+                ] ++ custom_modules;
+              }
+            ];
+          };
+
           shinji = nixpkgs.lib.nixosSystem {
             inherit system;
             modules = [
