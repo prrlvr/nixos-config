@@ -7,6 +7,19 @@
     interfaces.wlp4s0.useDHCP = true;
   };
 
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    publish = {
+      enable = true;
+      addresses = true;
+      domain = true;
+      hinfo = true;
+      userServices = true;
+      workstation = true;
+    };
+  };
+
   time.timeZone = "Europe/Paris";
 
   # services.openssh = {

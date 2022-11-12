@@ -11,6 +11,7 @@
       "networkmanager"
       "video"
       "wheel"
+      "prrlvr"
     ];
 
     group = "prrlvr";

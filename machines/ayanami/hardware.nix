@@ -18,6 +18,7 @@
     };
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
+    supportedFilesystems = [ "ntfs" ];
     loader = {
       timeout = 15;
       grub = {
