@@ -3,7 +3,8 @@
 {
   networking = {
     hostName = "asuka";
-    useDHCP = true;
+    useDHCP = false;
+    interfaces.enp6s0.useDHCP = true;
   };
 
   services.avahi = {
