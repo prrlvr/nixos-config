@@ -6,6 +6,7 @@ let
     init.defaultBranch = "main";
     pull.rebase = true;
     color.ui = true;
+    status.short = true;
 
     signing = {
       signByDefault = true;
@@ -15,6 +16,18 @@ let
     commit = {
       gpgsign = true;
       verbose = true;
+    };
+
+    tag.gpgsign = true;
+
+    rebase = {
+      autosquash = true;
+      autostash = true;
+      abbreviateCommands = true;
+    };
+
+    push = {
+      autoSetupRemote = true;
     };
   };
 in
